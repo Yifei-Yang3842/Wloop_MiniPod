@@ -106,8 +106,8 @@ void Drivetrain::setTravel(int direction) {
 
 void Drivetrain::setSteer(int frontValue, int rearValue) {
     // Adjust input
-    frontValue = (checkSteer(frontValue))*k_sensitivity;
-    rearValue = (checkSteer(rearValue))*k_sensitivity;
+    frontValue = -(checkSteer(frontValue))*k_sensitivity;
+    rearValue = -(checkSteer(rearValue))*k_sensitivity;
     // Once again, I might've fucked up the signs
     servoPositions[0] = map(frontValue, -100, 100, SERVO_INIT[0]-MAX_ANGLE, SERVO_INIT[0]+MAX_ANGLE);
     servoPositions[1] = map(frontValue, -100, 100, SERVO_INIT[1]-MAX_ANGLE, SERVO_INIT[1]+MAX_ANGLE);

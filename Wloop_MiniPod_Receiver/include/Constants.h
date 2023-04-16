@@ -6,9 +6,9 @@ const int NUM_BLDC_PAIRS = 4; // How many pairs of BLDC motors
 const int NUM_SERVO = 6; // How many servos 
 
 // Sensors
-const uint8_t TX0 = 1;
-const uint8_t RX0 = 0.38;
-const float LIDAR_Kp = 0.3;
+const int TX0 = 1;
+const int RX0 = 3;
+const float LIDAR_Kp = 0.85; // Between 0 and 1
 
 // PWM signals
 const int BLDC_MIN_PWM = 1100; // Configure in BLHELI_S firmware
@@ -17,10 +17,10 @@ const int IDLE_PWM = (BLDC_MAX_PWM + BLDC_MIN_PWM)/2;//       Front
 //                                                           |     | 
 // BLDC motors pins                                BLDC_0_PIN       BLDC_0_PIN
 const int BLDC_0_PIN = 32;//                                |       |     
-const int BLDC_1_PIN = 16;//                       BLDC_0_PIN       BLDC_0_PIN
+const int BLDC_1_PIN = 16;//                       BLDC_1_PIN       BLDC_1_PIN
 const int BLDC_2_PIN = 17;//       ------->        BLDC_2_PIN       BLDC_2_PIN
 const int BLDC_3_PIN = 23;//                                 |     |
-//                                                 BLDC_2_PIN       BLDC_2_PIN
+//                                                 BLDC_3_PIN       BLDC_3_PIN
 // Array containing BLDC pinout                                Back
 const int BLDC_PINS[NUM_BLDC_PAIRS] = {BLDC_0_PIN, BLDC_1_PIN, BLDC_2_PIN, BLDC_3_PIN};
 

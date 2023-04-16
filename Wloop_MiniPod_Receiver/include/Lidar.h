@@ -1,3 +1,4 @@
+#include <VL53L1X.h>
 #ifndef LIDAR_H
 #define LIDAR_H
 
@@ -14,7 +15,7 @@ public:
     Lidar();
 
     // Initialization sequence
-    void initialize(uint8_t XShutPin, int I2CAddress);
+    void initialize(int XShutPin, int I2CAddress);
 
     // Set a new target distance
     void setTarget(float newTarget);
