@@ -34,7 +34,7 @@ void OnDataRecv(const uint8_t* mac, const uint8_t* incomingData, int len) {
   // Code that will run everytime data is received -----------------------------------------------
 
   // E-Stop exception
-  if (data.EStop) {
+  if (data.EStop || data.FunctionButton) {
     while(1) {
       pod.stopAll();
       delay(20);
@@ -44,8 +44,8 @@ void OnDataRecv(const uint8_t* mac, const uint8_t* incomingData, int len) {
   switch(data.mode) {
   case 1: // Manual mode
     pod.setBLDCSpeed(data.BLDCPower);
-    pod.setSteer((data.jStick_x + data.jStick_yaw)/2, 
-                  (data.jStick_x - data.jStick_yaw)/2);
+    pod.setSteer((data.jStick_x + data.jStick_yaw)/4, 
+                  (data.jStick_x - data.jStick_yaw)/4);
     pod.setTravel(data.jStick_y);
     break;
 
@@ -60,8 +60,8 @@ void OnDataRecv(const uint8_t* mac, const uint8_t* incomingData, int len) {
 
   default: // Manual mode
     pod.setBLDCSpeed(data.BLDCPower);
-    pod.setSteer((data.jStick_x + data.jStick_yaw)/2, 
-                  (data.jStick_x - data.jStick_yaw)/2);
+    pod.setSteer((data.jStick_x + data.jStick_yaw)/4, 
+                  (data.jStick_x - data.jStick_yaw)/4);
     pod.setTravel(data.jStick_y);
 
   }

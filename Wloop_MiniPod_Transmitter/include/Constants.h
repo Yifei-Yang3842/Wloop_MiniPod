@@ -9,8 +9,8 @@ const int POT_PIN = 35;
 
 const int MODE_1_BTN = 33;
 const int MODE_2_BTN = 32;
-const int E_STOP_BTN = 19;
-const int FN_BTN = 18;
+const int E_STOP_BTN = 18;
+const int FN_BTN = 19;
 
 
 // Controller analog values
